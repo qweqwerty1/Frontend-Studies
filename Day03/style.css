@@ -1,0 +1,46 @@
+/* 기본 스타일 초기화 */
+* {
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+ul {
+    list-style: none; /* li 태그의 점을 제거 */
+}
+
+/* Flexbox 컨테이너 설정 */
+.flex-container {
+    display: flex; /* 이 한줄로 Flexbox가 시작 됩니다! */
+    justify-content: space-between; /* 주 축(가로) 방향으로 아이템들을 양쪽 끝으로 정렬 */
+    align-items: center; /* 교차 축(세로) 방향으로 아이템들을 중앙 정렬 */
+    padding: 15px 30px;
+    background-color: #333;
+    color: white;
+}
+
+/* 로고 스타일 */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 메뉴 아이템들을 가로로 정렬하기 위한 Flexbox */
+.menu {
+    display : flex;
+    gap: 20px; /* 아이템 사이의 간격을 20px로 설정 */
+}
+
+.menu li {
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.menu li:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
