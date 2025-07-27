@@ -1,0 +1,70 @@
+/* --- Day 4에서 작성한 기존 코드 --- */
+body {
+    margin : 0;
+    font-family: sans-serif;
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* 데스크톱 우선(Desktop-First) 접근: 기본 스타일은 넓은 화면 기준 */
+.grid-container {
+    display: grid; 
+    height: 100vh; 
+    grid-template-columns: 1fr 4fr; /* 2열 레이아웃 */
+    grid-template-rows: 100px auto 100px;
+    gap: 5px; 
+}
+
+.header {
+    background-color: #2c3e50;
+    
+    grid-column: 1 / -1;
+}
+
+.sidebar {
+    background-color: #34495e;
+    
+}
+
+.main {
+    background-color: #7f8c8d;
+    
+}
+
+.footer {
+    background-color: #2c3e50;
+    grid-column: 1 / -1; 
+}
+
+/* --- !!! Day 5 추가 코드: 미디어 쿼리 !!! --- */
+
+/* 화면 너비가 768px 이하일 때 아래의 스타일을 적용 */
+
+@media (max-width: 768px) {
+    .grid-container {
+        /* Grid 템플릿을 1열로 변경 */
+        grid-template-columns: 1fr; 
+        /* 행 구조도 모바일에 맞게 재정의 (헤더, 메인, 사이드바, 푸터 순) */
+        grid-template-rows: 80px 1fr auto 80px; 
+    }
+
+    /* 모든 아이템들이 1열을 꽉 채우도록 설정 */
+    .header, .sidebar, .main, .footer {
+        grid-column: 1 / -1; /* 모든 아이템이 1열을 차지 */
+    }
+
+    /* 모바일에서는 사이드바보다 메인 콘텐츠를 먼저 보여주기 위해 순서 변경 */
+    .main {
+        grid-row: 2; /* 메인 콘텐츠를 두 번째 행에 위치 */
+    }
+
+    .sidebar {
+        grid-row: 3; /* 사이드바를 세 번째 행에 위치 */
+    }
+}
