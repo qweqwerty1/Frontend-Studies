@@ -1,0 +1,15 @@
+.container {
+    text-align: center;
+    margin-top: 50px;
+    font-family: sans-serif;
+}
+
+#main-heading {
+    color: #333;
+}
+
+#change-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
